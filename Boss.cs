@@ -32,8 +32,8 @@ namespace workers
             day_salary = total_day_shifts * day_shifts_rate;
             night_salary = total_night_shifts * night_shifts_rate;
 
-            extra_day_salary = (int)(extra_day_shifts * (day_shifts_rate * 0.1));  // 10% за дневные
-            extra_night_salary = (int)(extra_night_shifts * (night_shifts_rate * 0.15)); // 15% за ночные
+            extra_day_salary = (int)(extra_day_shifts * (day_shifts_rate + day_shifts_rate * 0.1));  // 10% за дневные
+            extra_night_salary = (int)(extra_night_shifts * (night_shifts_rate + night_shifts_rate * 0.15)); // 15% за ночные
             
         }
         
