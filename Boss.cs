@@ -26,8 +26,23 @@ namespace workers
             total_day_shifts = workers.Sum(worker => worker.get_day_shifts());
             total_night_shifts = workers.Sum(worker => worker.get_night_shifts());
             
-            extra_day_shifts = total_day_shifts - mandatory_shifts;
-            extra_night_shifts = total_night_shifts - mandatory_shifts;
+            if (total_day_shifts <= 60)
+            {
+                extra_day_shifts = 0;
+            }
+            else
+            {
+                extra_day_shifts = total_day_shifts - mandatory_shifts;
+            }
+            
+            if (total_night_shifts < 0)
+            {
+                extra_night_shifts = 0;
+            }
+            else
+            {
+                extra_night_shifts = total_night_shifts - mandatory_shifts;
+            }
             
             day_salary = total_day_shifts * day_shifts_rate;
             night_salary = total_night_shifts * night_shifts_rate;
