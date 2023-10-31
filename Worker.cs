@@ -25,7 +25,7 @@ namespace workers
         private void generate_shifts()
         {
             Random random = new Random();
-            if (age > 18)
+            if (age >= 18)
             {   
                 for (int i = 0; i < 30; i++)
                 {
